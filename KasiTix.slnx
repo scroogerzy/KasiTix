@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="KasiTix.Api/KasiTix.Api.csproj" />
+  <Project Path="KasiTix.Domain/KasiTix.Domain.csproj" />
+  <Project Path="KasiTix.Infrastructure/KasiTix.Infrastructure.csproj" />
+</Solution>
