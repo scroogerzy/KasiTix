@@ -1,5 +1,4 @@
 using KasiTix.Domain.Entities;
-using KasiTix.Domain.Exceptions;
 using KasiTix.Domain.Repositories;
 
 namespace KasiTix.Api.Services;

@@ -1,5 +1,3 @@
-using FluentValidation;
-using KasiTix.Domain.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,12 +10,12 @@ public class ApiExceptionHandler : IExceptionHandler
         Exception exception,
         CancellationToken cancellationToken)
     {
-        int statusCode = exception switch
+        var statusCode = exception switch
         {
-            ValidationException => 400,
-            NotFoundException => 404,
-            ConflictException => 409,
-            UnprocessableEntityException => 422,
+            var ex when ex.GetType().Name == "ValidationException" => 400,
+            var ex when ex.GetType().Name == "NotFoundException" => 404,
+            var ex when ex.GetType().Name == "ConflictException" => 409,
+            var ex when ex.GetType().Name == "UnprocessableEntityException" => 422,
             _ => 500
         };
 
